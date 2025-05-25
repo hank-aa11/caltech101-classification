@@ -29,7 +29,7 @@ python train_caltech101.py \
   --mixup-alpha 0.4 \
   --cutmix-alpha 1.0 \
   --workers 8 \
-  --log-dir runs/r18_scratch_main  Best Val Acc = 0.712
+  --log-dir runs/r18_scratch_main  
 
 2 随机初始化 - 更强正则（防止过拟合）
 
@@ -37,7 +37,7 @@ python train_caltech101.py \
   --data-root /mnt/data/jichuan/ICL4Minimax/ICL4minimax/Caltech-101_Classification/data \
   --model resnet18 \
   --scratch \
-  --epochs 320 \
+  --epochs 300 \
   --batch-size 64 \
   --img-size 224 \
   --lr-backbone 2.5e-3 \
@@ -46,7 +46,7 @@ python train_caltech101.py \
   --mixup-alpha 0.4 \
   --cutmix-alpha 1.0 \
   --workers 8 \
-  --log-dir runs/r18_scratch_reg  Best Val Acc = 0.723
+  --log-dir runs/r18_scratch_reg  
 
 3 预训练 - 主力配置（收敛最快，曲线最平稳）
 
@@ -62,7 +62,7 @@ python train_caltech101.py \
   --mixup-alpha 0.4 \
   --cutmix-alpha 1.0 \
   --workers 8 \
-  --log-dir runs/r18_pretrain_main  Best Val Acc = 0.932
+  --log-dir runs/r18_pretrain_main  
 
 4 预训练 - 较大 Backbone LR（收敛更快）
 
@@ -78,7 +78,7 @@ python train_caltech101.py \
   --mixup-alpha 0.4 \
   --cutmix-alpha 1.0 \
   --workers 8 \
-  --log-dir runs/r18_pretrain_lr3e4  Best Val Acc = 0.935
+  --log-dir runs/r18_pretrain_lr3e4  
 
 5 预训练 - 减少正则 & MixUp（更关注最后 2–3 % 提升）
 
@@ -94,7 +94,7 @@ python train_caltech101.py \
   --mixup-alpha 0.2 \
   --cutmix-alpha 1.0 \
   --workers 8 \
-  --log-dir runs/r18_pretrain_lowwd_mix02 Best Val Acc = 0.940
+  --log-dir runs/r18_pretrain_lowwd_mix02
 
 
 # tensorboard --logdir runs
